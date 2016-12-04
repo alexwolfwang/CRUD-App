@@ -9,5 +9,64 @@
 </head>
 <body>
 
+
+    <div class="panel panel-info">
+
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                <%=title%>
+            </h3>
+        </div>
+
+        <div class="panel-body">
+
+            <div class="container"
+                 ng-cloak
+                 ng-app="productCategoryModule"
+                 ng-controller="productCategoryController">
+
+
+                <form class="navbar-form navbar-left" role="search"
+                      method="post"
+                      name="formProductCategory">
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="">Product Category Name</label>
+
+                            <input type="text" id="productCategory" class="form-control"
+                                   placeholder="Please Enter Product Category"
+                                   name="productCategory"
+                                   ng-model="productCategory.categoryName" required>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group">
+                            <label for="productDetails">Product Category Details</label>
+                            <textarea class="form-control" id="productDetails"
+                                      placeholder="Product Category Details"
+                                      name="productDetails"
+                                      rows="5" cols="30"
+                                      ng-model="productCategory.categoryDetails"
+                                      required></textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="form-group">
+                            <button type="button" class="btn btn-primary"
+                                    ng-click="createProductCategory(productCategory)">
+                                Create Product Category
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
